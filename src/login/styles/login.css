@@ -28,13 +28,13 @@
 }
 
 main {
-    margin-top: 70px;
+    margin-top: 4.375rem;
     margin-inline: auto;
     padding-inline: var(--size-14);
 
-    @media (min-width: 576px) {
-        margin-top: 100px;
-        width: 470px;
+    @media (min-width: 768px) {
+        margin-top: 6.25rem;
+        width: 500px;
     }
 }
 
@@ -58,11 +58,11 @@ h1 {
     svg {
         width: 164px;
         height: 32px;
-        margin-block-end: 45px;
-        @media (min-width: 576px) {
+        margin-block-end: 2.8125rem;
+        @media (min-width: 768px) {
             width: 230px;
             height: 44px;
-            margin-block-end: 50px;
+            margin-block-end: 3.125rem;
         }
     }
 }
@@ -117,18 +117,23 @@ button[type='submit'] {
 
     .auto-login-container {
         right: 0;
-        @media (min-width: 576px) {
+        @media (min-width: 768px) {
             right: auto;
             left: 0;
         }
 
-        width: 125px;
         height: 25px;
 
-        label,
-        span {
-            display: inline-block;
+        label {
             height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            span {
+                margin-top: 0.1875rem;
+                color: var(--color-black);
+            }
         }
 
         input:not(:checked) + label {
@@ -152,22 +157,34 @@ button[type='submit'] {
     .ip-address-container {
         display: none;
 
-        @media (min-width: 576px) {
-            display: block;
+        @media (min-width: 768px) {
             right: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
+
+        height: 25px;
         width: 78px;
+        line-height: 21px;
+
+        label {
+            font-weight: 700;
+        }
+
         input:not(:checked) + label {
             .ip-address-on {
                 display: none;
             }
             .ip-address-off {
                 display: inline-block;
+                color: var(--color-silver);
             }
         }
         input:checked + label {
             .ip-address-on {
                 display: inline-block;
+                color: var(--color-green);
             }
             .ip-address-off {
                 display: none;
