@@ -13,7 +13,7 @@ body {
 
 section {
     display: grid;
-    grid-template-rows: repeat(7, var(--size));
+    grid-template-rows: repeat(7, calc(var(--size)));
     gap: 20px;
     @media (min-width: 1024px) {
         grid-template-columns: repeat(2, 1fr);
@@ -25,9 +25,12 @@ article {
     --text-primary: var(--white);
     --button-primary: var(--large-spacing);
     --background-url: url('../products/ipad_pro.jpeg');
-    background: var(--background-url) no-repeat center center / cover;
+    background: var(--background-url) no-repeat center
+        calc(50% + var(--large-spacing)) / cover;
     padding-block-start: var(--large-spacing);
     @media (min-width: 1024px) {
+        background: var(--background-url) no-repeat center
+            calc(50% + var(--extra-large-spacing)) / cover;
         padding-block-start: var(--extra-large-spacing);
     }
     display: flex;
@@ -61,10 +64,10 @@ article {
         font-size: var(--small-text);
     }
 
-    & > div {
+    & > nav {
         display: flex;
         gap: var(--base-spacing);
-        button {
+        a {
             padding-block: var(--x-small-spacing);
             padding-inline: var(--small-spacing);
             font-size: var(--xx-small-text);
@@ -72,9 +75,7 @@ article {
             @media (min-width: 1024px) {
                 font-size: var(--x-small-text);
             }
-            a {
-                padding-inline: var(--small-spacing);
-            }
+
             &:first-of-type {
                 background-color: var(--button-primary);
                 color: var(--white);
@@ -111,6 +112,7 @@ article.ipad-pro {
     }
 }
 article.ipad-air {
+    background-color: #addcee;
     --text-primary: var(--black);
     --button-primary: var(--black);
     @media (min-resolution: 96dpi) {
@@ -130,7 +132,7 @@ article.ipad-air {
     }
 }
 article.iphone-15-pro {
-    background-color: var(--black);
+    background-color: black;
     --text-primary: var(--white);
     --button-primary: var(--blue-100);
     @media (min-resolution: 96dpi) {
@@ -161,7 +163,7 @@ article.iphone-15 {
     }
 }
 article.watch {
-    background-color: var(--black);
+    background-color: black;
     --text-primary: var(--white);
     --button-primary: var(--blue-100);
     @media (min-resolution: 96dpi) {
@@ -173,7 +175,7 @@ article.watch {
 }
 
 article.macbook-air {
-    /* background-color: var(--black); gradient*/
+    background-color: var(--white);
     --text-primary: var(--black);
     --button-primary: var(--black);
     @media (min-resolution: 96dpi) {
@@ -185,7 +187,7 @@ article.macbook-air {
 }
 
 article.airpods-pro {
-    background-color: var(--black);
+    background-color: black;
     --text-primary: var(--white);
     --button-primary: var(--blue-100);
     @media (min-resolution: 96dpi) {
